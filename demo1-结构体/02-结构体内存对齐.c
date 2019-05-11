@@ -78,6 +78,21 @@ void demo3(){
 }
 
 
+void demo4(){
+    struct A {
+        char a[3];
+        char b[4];
+        int c;
+    } a1;
+    
+    printf("size of A = %ld \n",sizeof(struct A));
+    /*
+     模数是8，最大类型int4，取最小值所以整体对齐数是4
+     3B + 4B + （补位）1B + 4B = 12B;
+     总长度必须满足是整体对齐数的倍数，所以12B
+     */
+}
+
 
 int main(int argc, const char * argv[]) {
     printf("size of int : %ld \n", sizeof(int));
@@ -85,7 +100,7 @@ int main(int argc, const char * argv[]) {
     printf("size of short : %ld \n", sizeof(short));
     printf("size of double : %ld \n", sizeof(double));
     printf("size of long double : %ld \n", sizeof(long double));
-    demo3();
+    demo4();
 	return 0;
 }
 
