@@ -61,6 +61,38 @@ void demo08(){
     printf("a=%d\nb=%d\nc=%d",a,b,c);
 }
 
+// 判断特定位的值
+void demo09(){
+    char mark = 0b00000010;
+    char a =    0b00000010;
+    char b = a&mark;
+    printf("倒数第二位是为%d",!!b);
+}
+
+// 设置特定位的值为1
+void demo10(){
+    char mark = 0b00000010;
+    char a =    0b00000001;
+    printf("设置前 倒数第二位是为%d\n",!!(a&mark));
+    
+    char b = a|mark;
+    printf("设置后的值是%d\n",b);
+    printf("设置后 倒数第二位是为%d\n",!!(b&mark));
+}
+
+// 设置特定位的值为0
+void demo11(){
+    char mark = 0b00000010;
+    char rMark = ~mark;
+    char a =    0b00000010;
+    printf("设置前的值是%d\n",a);
+    printf("设置前 倒数第二位是为%d\n",!!(a&mark));
+    
+    char b = a&rMark;
+    printf("设置后的值是%d\n",b);
+    printf("设置后 倒数第二位是为%d\n",!!(b&mark));
+}
+
 int main(){
-    demo08();
+    demo11();
 }
